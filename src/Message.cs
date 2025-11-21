@@ -31,4 +31,9 @@ public class Message
 
     [JsonPropertyName("reasoning_steps")]
     public List<ReasoningStep>? ReasoningSteps { get; set; }
+
+    public T? ParsedContent<T>() where T : class
+    {
+        return Content != null ? JsonSerializer.Deserialize<T>(Content) : null;
+    }
 }
