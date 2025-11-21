@@ -1,0 +1,34 @@
+name: Build and Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers on version tags like v1.0.0, v0.1.0, etc.
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore src/Reka-SDK.csproj
+      
+    - name: Build
+      run: dotnet build src/Reka-SDK.csproj --configuration Release --no-restore
+      
+    - name: Pack
+      run: dotnet pack src/Reka-SDK.csproj --configuration Release --no-build --output ./nupkg
+      
+    - name: Publish to NuGet.org
+      run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

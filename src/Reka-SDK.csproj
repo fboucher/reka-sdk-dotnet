@@ -5,6 +5,25 @@
     <RootNamespace>Reka.SDK</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>Reka.SDK</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>fboucher</Authors>
+    <Company>Reka</Company>
+    <Description>Official .NET SDK for Reka AI API - A SDK for integrating Reka's AI APIs into your .NET applications.</Description>
+    <PackageTags>reka;ai;sdk;dotnet;api;vision;research;chat</PackageTags>
+    <RepositoryUrl>https://github.com/fboucher/reka-sdk-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/fboucher/reka-sdk-dotnet</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
 </Project>
