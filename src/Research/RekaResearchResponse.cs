@@ -1,9 +1,10 @@
 
 using System.Text.Json.Serialization;
 
-namespace Reka.SDK;
 
-public class RekaResponse
+namespace Reka.SDK.Research;
+
+public class RekaResearchResponse
 {
     [JsonPropertyName("id")]
     public string? Id { get; set; }
@@ -27,5 +28,5 @@ public class RekaResponse
     public string? SystemFingerprint { get; set; }
 
     [JsonPropertyName("usage")]
-    public Usage? Usage { get; set; }
+    public ResearchUsage? Usage { get; set; }
 }

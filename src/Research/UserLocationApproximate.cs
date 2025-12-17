@@ -1,4 +1,4 @@
-namespace Reka.SDK;
+namespace Reka.SDK.Research;
 
 public class UserLocationApproximate
 {
