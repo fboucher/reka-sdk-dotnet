@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Reka.SDK;
+namespace Reka.SDK.Chat;
 
 public class RekaMessage
 {

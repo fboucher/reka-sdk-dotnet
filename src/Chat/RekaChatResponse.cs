@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 
-namespace Reka.SDK;
+
+namespace Reka.SDK.Chat;
 
 public class RekaChatResponse
 {
@@ -11,7 +12,7 @@ public class RekaChatResponse
     public string? Model { get; set; }
 
     [JsonPropertyName("usage")]
-    public RekaUsage? Usage { get; set; }
+    public ChatUsage? Usage { get; set; }
 
     [JsonPropertyName("responses")]
     public List<ResponseItem>? Responses { get; set; }

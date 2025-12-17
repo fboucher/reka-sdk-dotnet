@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace Reka.SDK;
+namespace Reka.SDK.Research;
 
-public class Usage
+public class ResearchUsage
 {
     [JsonPropertyName("completion_tokens")]
     public int CompletionTokens { get; set; }
